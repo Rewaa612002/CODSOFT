@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ruda:wght@400;500;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ruda",sans-serif;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(
+     circle,
+     #494949 0%,
+     rgb(49, 49, 49) 100%
+     );
+}
+.wrapper{
+    background: black;
+    width: 450px;
+    padding: 1rem;
+    border-top:4px solid red;
+    border-radius: 10px;
+    box-shadow: 5px 10px 3px rgba(0,0,0,0.5);
+
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul li{
+    font-size: 1.5rem;
+    width: 20%;
+    text-align: center;
+    padding: 1rem 0.8rem;
+    cursor: pointer;
+    margin: 0.6rem;
+    border-radius: 10%;
+    box-shadow: 1px 0px 10px #212f3d;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+ul li:active{
+    transform: scale(1.2);
+}
+.wrapper input{
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.5rem 1rem;
+    text-align: right;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 2rem;
+
+}
+.screen{
+    position: relative;
+}
+.top_txt{
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    color: #95a5a6;
+
+}
+.dummy{
+    font-size: 1.2rem;
+}
+.clr{
+    color:rgb(251, 8, 8);
+}
+.btns{
+    color:red ;
+}
