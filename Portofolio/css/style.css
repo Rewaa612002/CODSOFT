@@ -48,6 +48,7 @@ html{
     display: inline-block;
 }
 .navbar .menu li a{
+    display: block;
     color: white;
     font-size: 18px;
     font-weight: 500;
@@ -68,6 +69,30 @@ html{
     cursor: pointer;
     display: none;
 }
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: #7f171a;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /*Home Section*/
 .home{
     display: flex;
@@ -133,7 +158,7 @@ section .title::after{
     background: white;
     transform: translateX(-50%);
 }
-.about,.education ,.skills,.projects, .contact{
+.about,.education ,.skills,.projects, .contact, footer{
     font-family: 'Poppins',sans-serif;
 }
 .about .about-content, .contact .contact-content{
@@ -142,6 +167,28 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
+.about .about-content .right a,
+.home .home-content a,
+.contact .contact-content .row .cv-btn
+{
+    display: inline-block;
+    background: #7f171a;
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #7f171a;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover,
+.home .home-content a:hover,
+.contact .contact-content .row .cv-btn:hover{
+    color: #7f171a;
+    background: none;
+}
+
 /*About Section*/
 
 .about .title::after{
@@ -174,22 +221,7 @@ margin-bottom: 10px;
 .about .about-content .right p{
     text-align: justify;
 }
-.about .about-content .right a{
-    display: inline-block;
-    background: #7f171a;
-    color: white;
-    font-size: 20px;
-    font-weight:500;
-    padding: 10px 30px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid #7f171a;
-    transition: all 0.3s ease;
-}
-.about .about-content .right a:hover{
-    color: #7f171a;
-    background: none;
-}
+
 
 
 /*Education Section*/
@@ -630,10 +662,169 @@ color: white;
     text-align: justify;
 
 }
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height:65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: #7f171a;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+
+}
+.contact .contact-content .info .sub-title{
+    color: black;
+}
+
+.contact .contact-content .row .social-icons{
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.contact .contact-content .row .social-icon
+{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: white;
+    margin: 0px 0px 5px 5px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px -5px black;
+    color: #7f171a;
+    overflow: hidden;
+    position: relative;
+}
+.contact .contact-content .row .social-icon i
+{
+  line-height: 50px;
+    font-size: 20px;
+    transition: 0.2s linear;
+}
+.contact .contact-content .row .social-icon:hover i
+{
+    transform: scale(1.3);
+    color: white;
+}
+.contact .contact-content .row .social-icon::before
+{
+    content: "";
+    position: absolute;
+    width:120%;
+    height: 120%;
+    background: #7f171a;
+    transform: rotate(45deg);
+    left:-110%;
+    top: 90%;
+    
+}
+.contact .contact-content .row .social-icon:hover::before
+{
+    animation: social-icon 0.7s 1;
+    top: -10%;
+    left: -10%;
+}
+@keyframes social-icon
+{0%{
+    left: -110%;
+    top: 90%;
+    }50%{
+        left: 10%;
+        top: -30%;
+    }100%{
+        top: -10%;
+        left: -10%;
+    }
+}
 
 
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 150px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-right: 10px;
+}
+.contact .right form .field input, 
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family:"Poppins", sans-serif ;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button{
+    height: 50px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #7f171a;
+    background: #7f171a;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .button button:hover{
+    color: #7f171a;
+    background: none;
+}
 
+/*footer section*/
+footer{
+    background: black;
+    padding: 20px 23px;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+}
+footer span a
+{
+    color: #7f171a;
+    text-decoration: none;
+}
 
+footer span a:hover{
+    text-decoration: underline;
+
+}
+
+footer span i{
+    color: #7f171a;
+}
 
 
 
